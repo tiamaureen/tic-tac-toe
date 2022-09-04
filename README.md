@@ -36,7 +36,7 @@ Bonuses:
 
 ## Credits & Gratitudes
 
-*A special thanks to my amazing instructors: [Ben Manley](https://github.com/ManliestBen), [David Stinson](https://github.com/DavidStinson), [Hunter Long](https://github.com/whlong1), [Ian Terada](https://github.com/teradaian) and [Joe Malatesta](https://github.com/JoeMalatesta). Y'all are the "dream-team".c.*
+*A special thanks to my amazing instructors: [Ben Manley](https://github.com/ManliestBen), [David Stinson](https://github.com/DavidStinson), [Hunter Long](https://github.com/whlong1), [Ian Terada](https://github.com/teradaian) and [Joe Malatesta](https://github.com/JoeMalatesta). Y'all are the "dream-team".*
 
 Credits:
 
