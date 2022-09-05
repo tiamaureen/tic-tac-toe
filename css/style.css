@@ -25,6 +25,7 @@ section.board {
   grid-gap: 1.5vmin;
   justify-content: center;
   align-content: center;
+  margin-top: 100px;
 }
 
 div.box {

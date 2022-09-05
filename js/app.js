@@ -15,6 +15,9 @@
 /*---------------------------- variables (state) ----------------------------*/
 
 //* step 1: define variables required to track state of game
+
+let board, turn, winner
+
 // define required variables used to track the state of the game
 
 // - `board`: to represent the state of the squares on the board
