@@ -1,15 +1,3 @@
-/*----------------------------------- mvp -----------------------------------*/
-
-// - display empty tic-tac-toe board when the page is initially displayed
-// - a player can click on the nine cells to make a move
-// - every click will alternate between marking and x and o
-// - once occupied with an x or o the cell can't be played again
-// - provide a reset game button that will clear the contents of the board
-// - display whose turn it is ("x" or "o")
-// - provide win logic and display a winning message
-// - provide logic for a cat's game (tie), also displaying a message
-
-
 /*-------------------------------- constants --------------------------------*/
 
 const winningCombos = [
@@ -30,9 +18,7 @@ let board, turn, winner
 /*------------------------ cached element references ------------------------*/
 
 const squareEls = document.querySelectorAll('div.square')
-console.log(squareEls)
 const messageEls = document.getElementById('message') // game status
-console.log(messageEls)
 
 /*----------------------------- event listeners -----------------------------*/
 

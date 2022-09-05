@@ -2,8 +2,7 @@
 
 body {
   background-color: #181818;
-	/* Use a system font, if none are available use an available sans-sarif   font */
-	/* font-family: Roboto, sans-serif; */
+  font-family: 'Roboto Mono', monospace;
   color: white;
 	margin: 0;
   /* justify-content: center; */
@@ -13,10 +12,37 @@ body {
   /* flex-direction: column; */
 }
 
-/*TODO add box behind title*/
-/* #title {
+#title {
+  font-weight: 200;
+  padding: 10px 70px 10px 70px;
+  margin: 50px auto 50px auto;
+  font-size: 36px;
+  letter-spacing: 3px;
+  background-color: #37006A;
+  display: inline-flex;
+}
 
-} */
+#message {
+  font-weight: 200;
+  font-size: 18px;
+}
+
+body:before, body:after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: #8C8C8C;
+}
+body:before {
+    top: 0;
+    height: 20px;
+}
+body:after {
+    bottom: 0;
+    height: 80px;
+}
 
 section.board {
   display: grid;
