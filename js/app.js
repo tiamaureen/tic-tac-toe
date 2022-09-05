@@ -28,8 +28,11 @@ let board, turn, winner
 
 //* step 2: store cached element references:
 // - `squareE1s`: a constant in which the 9 elements representing the squares on page are stored
-//   - may give each square a class in HTML
+const squareEls = document.querySelectorAll('div.square')
+console.log(squareEls)
 // - `messageE1`: a constant in which the element that displays the game's status is stored
+const messageEls = document.getElementById('message') // game status
+console.log(messageEls)
 
 /*----------------------------- event listeners -----------------------------*/
 
