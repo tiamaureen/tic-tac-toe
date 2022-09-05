@@ -12,6 +12,9 @@
 
 /*-------------------------------- constants --------------------------------*/
 
+//* step 5:  define required constraints
+// in a constant called `winningCombos` define the eight possible winning combinations as an array of arrays
+
 /*---------------------------- variables (state) ----------------------------*/
 
 // step 1: define variables required to track state of game
@@ -25,10 +28,10 @@ let board, turn, winner
 // step 2: store cached element references:
 // `squareE1s`: a constant in which the 9 elements representing the squares on page are stored
 const squareEls = document.querySelectorAll('div.square')
-console.log(squareEls)
+// console.log(squareEls)
 // `messageE1`: a constant in which the element that displays the game's status is stored
 const messageEls = document.getElementById('message') // game status
-console.log(messageEls)
+// console.log(messageEls)
 
 /*----------------------------- event listeners -----------------------------*/
 
@@ -52,27 +55,35 @@ function init(){
   render()
 }
 
-//  - *9 elements in board array will correspond to a square on board
-//   - the nine elements in the `board` array will correspond to a square on the board
-//     - index 0 (`board[0]`) will represent the top-left square
-//     - index 1 (`board[1]`) will represent the top-middle square
-//     - index 2 (`board[2]`) will represent the top-right square
-//     - index 3 (`board[3]`) will represent the middle-left square
-//     - so on, continuing through the entire board until…
-//     - index 8 (`board[8]`) will represent the bottom-right square
-
 //* step 4: state of game that should be rendered to user
-// 4a. create a function called `render`
-// 4b. loop over `board` and for each element
-//    - use current index of the iteration to access the corresponding square in the `squareE1s` array
-//    - Style that square however you wish, dependent on the value contained in the current cell being iterated over (`-1`, `1`, or `null`)
-// 4c. render a message based on current game state
-//    - if `winner` has value of `null` (game is still in progress), render whose turn it is
-//    - if `winner` is equal to `'T'` (tie), render a tie message
-//    - otherwise, render a congratulatory message to the player that has won
-
-//* step 5:  define required constraints
-// 5a. in a constant called `winningCombos` define the eight possible winning combinations as an array of arrays
+// create a function called `render`
+function render(){
+// loop over `board` and for each element
+  board.forEach(function(square,index){
+// use current index of the iteration to access the corresponding square in the `squareE1s` array
+    if(square === 1){
+// Style that square however you wish, dependent on the value contained in the current cell being iterated over (`-1`, `1`, or `null`)
+      squareEls[index].textContent = 'x'
+    }else if(square === -1){
+      squareEls[index].textContent = 'o'
+    }else{
+      squareEls[index].textContent = ''
+    }
+  })
+// render a message based on current game state
+  if(winner === null){
+// if `winner` has value of `null` (game is still in progress), render whose turn it is
+    messageEls.textContent = `it's ${turn === 1 ? 'Player X' : 'Player O'}'s turn.`
+  }else if(winner === 'T'){
+// if `winner` is equal to `'T'` (tie), render a tie message
+    messageEls.textContent = `y'all tied.`
+//render a congratulatory message to the player that has won
+  }else if(winner === 1){
+    messageEls.textContent = `x, you are the winner!!!.`
+  }else if(winner === -1){
+    messageEls.textContent = `o, you are the winner!!!.`
+  }
+}
 
 //* step 6: handle player clicking square with a `handleClick` function
 // 6a. create function called `handleClick` that has an `evt` parameter
