@@ -14,23 +14,19 @@
 
 /*---------------------------- variables (state) ----------------------------*/
 
-//* step 1: define variables required to track state of game
-
-let board, turn, winner
-
-// define required variables used to track the state of the game
-
+// step 1: define variables required to track state of game
 // - `board`: to represent the state of the squares on the board
 // - `turn`: to track whose turn it is
 // - `winner`: to represent if anyone has won yet, or if a tie has occurred
+let board, turn, winner
 
 /*------------------------ cached element references ------------------------*/
 
-//* step 2: store cached element references:
-// - `squareE1s`: a constant in which the 9 elements representing the squares on page are stored
+// step 2: store cached element references:
+// `squareE1s`: a constant in which the 9 elements representing the squares on page are stored
 const squareEls = document.querySelectorAll('div.square')
 console.log(squareEls)
-// - `messageE1`: a constant in which the element that displays the game's status is stored
+// `messageE1`: a constant in which the element that displays the game's status is stored
 const messageEls = document.getElementById('message') // game status
 console.log(messageEls)
 
@@ -39,20 +35,22 @@ console.log(messageEls)
 
 /*-------------------------------- functions --------------------------------*/
 
-//* step 3: upon loading
-// upon loading the same tate should be initialized, and a function should be called to render this game state
-// - create function called `init`
-// - call `init` when app loads
-//   - window.onload method, or...
-//   - event listeners
-// - console.log() cached element references to ensure the correct elements are grabbed
+// step 3: upon loading
+// upon loading the game state should be initialized, and a function should be called to render this game state
+// create function called `init`
+init()
 
-// - set `board` variable to an array containing 9 `null`s to represent empty square
-//   - see list below*
-// - set the `turn` to `1` - representing player `x`
-//   - i.e. player `o` will be represented by `-1`, which will allow us to change the turn by multiplying `turn` by `-1` 
-// - set the `winner` to `null`
-// - call a function called `render` at the end of the `init` function
+// call `init` when app loads
+function init(){
+// set `board` variable to an array containing 9 `null`s to represent empty square
+  board = new Array(9).fill(null)
+// set the `turn` to `1` - representing player `x`
+  turn = 1 // 1 represents player x | -1 represents player o
+// set the `winner` to `null`
+  winner = null
+// call a function called `render` at the end of the `init` function
+  render()
+}
 
 //  - *9 elements in board array will correspond to a square on board
 //   - the nine elements in the `board` array will correspond to a square on the board
