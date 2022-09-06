@@ -7,7 +7,7 @@ Version 1.0 Complete | Improvements to come...
 
 *Unit #1 project, for the software engineering intensive, at General Assembly (cohort: SEI 8/22).*
 
-### MVP
+### Version 1.0 MVP
 
 - Display empty tic-tac-toe board when the page is initially displayed.
 - A player can click on the nine cells to make a move.
