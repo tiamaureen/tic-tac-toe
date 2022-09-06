@@ -57,9 +57,9 @@ function render(){
   if(!winner){
     messageEls.textContent = `it's ${turn === 1 ? 'player x' : 'player o'}'s turn.`
   }else if(winner === 1){
-    messageEls.textContent = `x, you are the winner!!!.`
+    messageEls.textContent = `x, you are the winner!!!`
   }else if(winner === -1){
-    messageEls.textContent = `o, you are the winner!!!.`
+    messageEls.textContent = `o, you are the winner!!!`
   }else if(winner === 'T'){
     messageEls.textContent = `y'all tied. it's a draw. try again?` 
   }
