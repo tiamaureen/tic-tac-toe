@@ -2,10 +2,6 @@
 
 /*-------------------------------- constants --------------------------------*/
 
-// 0, 1, 2
-// 3, 4, 5
-// 6, 7, 8
-
 const winningCombos = [
   [0, 1, 2],
   [0, 3, 6],
@@ -29,8 +25,8 @@ const resetBtnEls = document.getElementById('restart')
 
 /*----------------------------- event listeners -----------------------------*/
 
-squareEls.forEach((select) => {select.addEventListener("click", handleClick)})
-resetBtnEls.addEventListener("click", init)
+squareEls.forEach((select) => {select.addEventListener('click', handleClick)})
+resetBtnEls.addEventListener('click', init)
 
 /*-------------------------------- functions --------------------------------*/
 
@@ -53,7 +49,6 @@ function render(){
       squareEls[i].textContent = ''
     }
   })
-
   if(!winner){
     messageEls.textContent = `it's ${turn === 1 ? 'player x' : 'player o'}'s turn.`
   }else if(winner === 1){
@@ -66,7 +61,7 @@ function render(){
 }
 
 function handleClick(e){
-  let sIdx = parseInt(e.target.id.replace('sq', ''))
+  let sIdx = parseInt(e.target.id.replace('sq',''))
   if(board[sIdx] || winner !== null){
     return
   }
@@ -76,17 +71,7 @@ function handleClick(e){
   render()
 }
 
-// function getWinner(){
-//   let winner = []
-//   winningCombos.forEach(function(c, i){
-//     if (board[c[0]] && board[c[0]] === board[c[1]] && board[c[0]] === board[c[2]])
-//     winner = board[c[0]]
-//   })
-//   return winner ? winner : board.includes(null) ? null : 'T'
-//   render()
-// }
-
-function getWinner() {
+function getWinner(){
   for (let i = 0; i < winningCombos.length; i++){
     let sum = board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]
     if(sum === 3){
@@ -95,11 +80,25 @@ function getWinner() {
       winner = -1
     }else if (board.includes(null) === false){
       winner = 'T'
-    }
-    render()
+    }render()
   }
 }
 
 function resetGame(){
   init()
 }
+
+
+
+//---------------------------------------------------------------------------*/
+
+
+
+// function getWinner(){
+//   let winner = []
+//   winningCombos.forEach(function(c, i){
+//     if (board[c[0]] && board[c[0]] === board[c[1]] && board[c[0]] === board[c[2]])
+//     winner = board[c[0]{}
+//   })
+//   return winner ? winner : board.includes(null) ? null : 'T'
+// }render()
