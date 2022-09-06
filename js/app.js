@@ -82,8 +82,7 @@ function handleClick(e){
 //     if (board[c[0]] && board[c[0]] === board[c[1]] && board[c[0]] === board[c[2]])
 //     winner = board[c[0]]
 //   })
-//   return winner ? winner : board.includes(null) ? null : 'T'{
-//   }
+//   return winner ? winner : board.includes(null) ? null : 'T'
 //   render()
 // }
 
