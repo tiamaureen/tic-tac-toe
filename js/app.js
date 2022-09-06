@@ -72,7 +72,7 @@ function handleClick(e){
 }
 
 function getWinner(){
-  // note: "Reminder: orEach won't work if you're returning out of the loop (since you can't do that with forEach)"
+  // note to self, from Ben: "Reminder: forEach won't work if you're returning out of the loop (since you can't do that with forEach)"
   for (let i = 0; i < winningCombos.length; i++){
     let sum = board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]
     if(sum === 3){
