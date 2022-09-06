@@ -1,4 +1,11 @@
+// I'm going to be working on this more and more over the coming weeks
+// for some reason my 
+
 /*-------------------------------- constants --------------------------------*/
+
+// 0, 1, 2
+// 3, 4, 5
+// 6, 7, 8
 
 const winningCombos = [
   [0, 1, 2],
@@ -47,25 +54,26 @@ function render(){
       squareEls[i].textContent = ''
     }
   })
-  // if(!winner){
-  //   messageEls.textContent = `it's ${turn === 1 ? 'player x' : 'player o'}'s turn.`
-  // }else if(winner === 1){
-  //   messageEls.textContent = `x, you are the winner!!!.`
-  // }else if(winner === -1){
-  //   messageEls.textContent = `o, you are the winner!!!.`
-  // }else if(winner === 'T'){
-  //   messageEls.textContent = `y'all tied. it's a draw. try again?` 
-  // }
-  switch(winner){
-    case 1:
-      messageEls.textContent = `x, you are the winner!!!.`
-    case -1:
-      messageEls.textContent = `o, you are the winner!!!.`
-    case "T":
-      messageEls.textContent = `y'all tied. it's a draw. try again?` 
-    default:
+  if(!winner){
     messageEls.textContent = `it's ${turn === 1 ? 'player x' : 'player o'}'s turn.`
+  }else if(winner === 1){
+    messageEls.textContent = `x, you are the winner!!!.`
+  }else if(winner === -1){
+    messageEls.textContent = `o, you are the winner!!!.`
+  }else if(winner === 'T'){
+    messageEls.textContent = `y'all tied. it's a draw. try again?` 
   }
+
+//   switch(winner){
+//     case 1:
+//       messageEls.textContent = `x, you are the winner!!!.`
+//     case -1:
+//       messageEls.textContent = `o, you are the winner!!!.`
+//     case "T":
+//       messageEls.textContent = `y'all tied. it's a draw. try again?` 
+//     default:
+//     messageEls.textContent = `it's ${turn === 1 ? 'player x' : 'player o'}'s turn.`
+//   }
 }
 
 function handleClick(e){
@@ -78,14 +86,28 @@ function handleClick(e){
   render()
 }
 
-function getWinner(){
-  let winner = []
-  winningCombos.forEach(function(c, i){
-    if (board[c[0]] && board[c[0]] === board[c[1]] && board[c[0]] === board[c[2]])
-    winner = board[c[0]]
-  })
-  return winner ? winner : board.includes('') ? null : 'T'
-  render()
+// function getWinner(){
+//   let winner = []
+//   winningCombos.forEach(function(c, i){
+//     if (board[c[0]] && board[c[0]] === board[c[1]] && board[c[0]] === board[c[2]])
+//     winner = board[c[0]]
+//   })
+//   return winner ? winner : board.includes('') ? null : 'T'
+//   render()
+// }
+
+function getWinner() {
+  for (let i=0; i < winningCombos.length; i++){
+    let sum = board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]
+    if(sum === 3){
+      winner = 1
+    }else if(sum === -3){
+      winner = -1
+    }else if (board.includes(null) === false) {
+      winner = 'T'
+    }
+    render()
+  }
 }
 
 function resetGame(){
