@@ -81,5 +81,6 @@ button.restart {
 }
 
 button.restart:hover {
-  background-color: white;
+  background-color: #8C8C8C;;
+  /* color: black; */
 }

@@ -1,5 +1,4 @@
 // I'm going to be working on this more and more over the coming weeks
-// for some reason my 
 
 /*-------------------------------- constants --------------------------------*/
 
@@ -54,6 +53,7 @@ function render(){
       squareEls[i].textContent = ''
     }
   })
+
   if(!winner){
     messageEls.textContent = `it's ${turn === 1 ? 'player x' : 'player o'}'s turn.`
   }else if(winner === 1){
@@ -63,17 +63,6 @@ function render(){
   }else if(winner === 'T'){
     messageEls.textContent = `y'all tied. it's a draw. try again?` 
   }
-
-//   switch(winner){
-//     case 1:
-//       messageEls.textContent = `x, you are the winner!!!.`
-//     case -1:
-//       messageEls.textContent = `o, you are the winner!!!.`
-//     case "T":
-//       messageEls.textContent = `y'all tied. it's a draw. try again?` 
-//     default:
-//     messageEls.textContent = `it's ${turn === 1 ? 'player x' : 'player o'}'s turn.`
-//   }
 }
 
 function handleClick(e){
@@ -83,6 +72,7 @@ function handleClick(e){
   }
   board[sIdx] = turn
   turn *= -1
+  getWinner()
   render()
 }
 
@@ -92,12 +82,14 @@ function handleClick(e){
 //     if (board[c[0]] && board[c[0]] === board[c[1]] && board[c[0]] === board[c[2]])
 //     winner = board[c[0]]
 //   })
-//   return winner ? winner : board.includes('') ? null : 'T'
+//   return winner ? winner : board.includes(null) ? null : 'T'{
+    
+//   }
 //   render()
 // }
 
 function getWinner() {
-  for (let i=0; i < winningCombos.length; i++){
+  for (let i = 0; i < winningCombos.length; i++){
     let sum = board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]
     if(sum === 3){
       winner = 1
