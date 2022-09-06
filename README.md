@@ -1,7 +1,6 @@
 # Tic-Tac-Toe Game
 
-In active development as of 9/4/22... coming soon...
-
+Version 1.0 Complete | Improvements to come...
 ## Overview
 
 [tictactoega.me](https://tictactoeg.me/) (coming soon)
@@ -31,8 +30,7 @@ Built a Tic-Tac-Toe game using the technologies we've learned thus far:
 Bonuses:
 
 - Wireframing: [Figma](https://www.figma.com/)
-- Deploy a [Website](https://tictactoeg.me/) using... (coming soon)
-<!-- choose framework-->
+- Deploy a [Website](https://tictactoeg.me/) (coming soon)
 
 ## Credits & Gratitudes
 

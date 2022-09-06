@@ -83,7 +83,6 @@ function handleClick(e){
 //     winner = board[c[0]]
 //   })
 //   return winner ? winner : board.includes(null) ? null : 'T'{
-    
 //   }
 //   render()
 // }
@@ -95,7 +94,7 @@ function getWinner() {
       winner = 1
     }else if(sum === -3){
       winner = -1
-    }else if (board.includes(null) === false) {
+    }else if (board.includes(null) === false){
       winner = 'T'
     }
     render()
