@@ -79,7 +79,7 @@ function getWinner () {
       winner = 1
     } else if (sum === -3) {
       winner = -1
-    } else if (board.includes(null) === false) {
+    } else if (board.includes(null) === false && winner === null) {
       winner = 'T'
     }render()
   }
